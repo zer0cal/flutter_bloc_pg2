@@ -29,6 +29,7 @@ migrate_working_dir/
 **/macos
 **/windows
 **/web
+**/flutter_bloc_pg2_android
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
