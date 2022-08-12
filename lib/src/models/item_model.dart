@@ -2,13 +2,13 @@ import 'dart:developer' as dev;
 
 class ItemModel {
   ItemModel.fromJson(Map<String, dynamic> parsedJson) {
-    dev.log('ItemModel.fromJson(); length: ${parsedJson['results']}', name: 'MODEL');
+    dev.log('ItemModel.fromJson(); length: ${parsedJson['results'].length}', name: 'MODEL');
     _page = parsedJson['page'];
     _totalResults = parsedJson['total_results'];
     _totalPages = parsedJson['total_pages'];
     List<_Result> temp = [];
     for (var result in parsedJson['results']) {
-      temp.add(result);
+      temp.add(_Result(result));
     }
     _results = temp;
   }
@@ -47,7 +47,7 @@ class _Result {
   late int _voteCount;
   late int _id;
   late bool _video;
-  late double _voteAverage;
+  late var _voteAverage;
   late String _title;
   late double _popularity;
   late String _posterPath;
